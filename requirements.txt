@@ -1,0 +1,7 @@
+django
+django-rest-framework
+django-cors-headers
+django-allauth
+djangorestframework-simplejwt
+pytest-django
+Pillow
