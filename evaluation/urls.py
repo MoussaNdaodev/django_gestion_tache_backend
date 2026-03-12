@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import StatistiqueListCreateView, StatistiqueDetailView, PrimeListCreateView, PrimeDetailView
+from .views import StatistiqueListView, PrimeListView, RecalculerStatsView, DashboardStatsView
 
 urlpatterns = [
-    path('stats/', StatistiqueListCreateView.as_view()),
-    path('stats/<int:pk>/', StatistiqueDetailView.as_view()),
-    path('primes/', PrimeListCreateView.as_view()),
-    path('primes/<int:pk>/', PrimeDetailView.as_view()),
+    path('', StatistiqueListView.as_view()),
+    path('primes/', PrimeListView.as_view()),
+    path('recalculer/', RecalculerStatsView.as_view()),
+    path('dashboard/', DashboardStatsView.as_view()),
 ]

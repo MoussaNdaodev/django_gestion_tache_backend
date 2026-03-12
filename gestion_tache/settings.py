@@ -4,9 +4,7 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-change-this-in-production-xyz123abc456'
-
 DEBUG = True
-
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
@@ -16,13 +14,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # Librairies
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
-
     # Apps
     'utilisateur',
     'projet',
@@ -78,7 +74,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# ── DRF : IsAuthenticated par défaut, JWT obligatoire ──
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -99,9 +94,9 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200',   # Angular
-    'http://localhost:3000',   # React
-    'http://localhost:5173',   # Vite
+    'http://localhost:4200',
+    'http://localhost:3000',
+    'http://localhost:5173',
 ]
 
 LANGUAGE_CODE = 'fr-fr'
@@ -113,14 +108,13 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# ── Email ──
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'votre_email@gmail.com'
-EMAIL_HOST_PASSWORD = 'votre_mot_de_passe_app'
-DEFAULT_FROM_EMAIL = 'ESMT Tâches <votre_email@gmail.com>'
+EMAIL_HOST_USER = '665f78b7ce3242'
+EMAIL_HOST_PASSWORD = 'd0a0acd773898c'
+DEFAULT_FROM_EMAIL = 'ESMT Tâches <esmt@gmail.com>'
 NOTIFICATION_DAYS_BEFORE = 2
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
