@@ -21,4 +21,5 @@ USER appuser
 
 EXPOSE 8000
 
-CMD ["gunicorn", "gestion_tache.wsgi:application", "--bind", "0.0.0.0:8000", "--workers=3"]
+# Dockerfile — ajoute un script de démarrage
+CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn gestion_tache.wsgi:application --bind 0.0.0.0:8000 --workers=3"]
